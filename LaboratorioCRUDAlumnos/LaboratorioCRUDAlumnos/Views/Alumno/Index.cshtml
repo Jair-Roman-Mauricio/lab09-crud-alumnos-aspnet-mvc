@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LaboratorioCRUDAlumnos.Models.AlumnoModel>
+@{
+    ViewBag.Title = "Alumnos";
+}
+<h2>Listado de alumnos</h2>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["Mensaje"]</div>
+}
+
+<p>@Html.ActionLink("Registrar nuevo alumno", "Create", null, new { @class = "btn btn-primary" })</p>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Id)</th>
+        <th>@Html.DisplayNameFor(m => m.Nombres)</th>
+        <th>@Html.DisplayNameFor(m => m.Apellidos)</th>
+        <th>@Html.DisplayNameFor(m => m.Edad)</th>
+        <th>@Html.DisplayNameFor(m => m.Correo)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Id)</td>
+            <td>@Html.DisplayFor(m => item.Nombres)</td>
+            <td>@Html.DisplayFor(m => item.Apellidos)</td>
+            <td>@Html.DisplayFor(m => item.Edad)</td>
+            <td>@Html.DisplayFor(m => item.Correo)</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+@if (!Model.Any())
+{
+    <p class="text-muted">No hay alumnos registrados.</p>
+}

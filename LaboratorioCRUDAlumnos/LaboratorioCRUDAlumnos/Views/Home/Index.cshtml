@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+<div class="jumbotron">
+    <h1>Registro de Alumnos</h1>
+    <p class="lead">Aplicación ASP.NET MVC (.NET Framework) que administra alumnos con operaciones CRUD. Los datos se conservan en la sesión del usuario.</p>
+    <p>@Html.ActionLink("Ir al listado de alumnos »", "Index", "Alumno", null, new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+<div class="row">
+    <div class="col-md-4"><h2>Modelo</h2><p>Clase <code>AlumnoModel</code> con Id, Nombres, Apellidos, Edad y Correo.</p></div>
+    <div class="col-md-4"><h2>Controlador</h2><p><code>AlumnoController</code> usa <code>Session["alumnos"]</code> como almacenamiento temporal.</p></div>
+    <div class="col-md-4"><h2>Vistas</h2><p>Vistas Razor: Index, Details, Create, Edit y Delete.</p></div>
+</div>

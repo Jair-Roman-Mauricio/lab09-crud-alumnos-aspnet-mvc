@@ -1,0 +1,19 @@
+﻿@model LaboratorioCRUDAlumnos.Models.AlumnoModel
+@{
+    ViewBag.Title = "Detalles";
+}
+<h2>Detalles del alumno</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.Id)</dt><dd>@Html.DisplayFor(m => m.Id)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Nombres)</dt><dd>@Html.DisplayFor(m => m.Nombres)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Apellidos)</dt><dd>@Html.DisplayFor(m => m.Apellidos)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Edad)</dt><dd>@Html.DisplayFor(m => m.Edad)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Correo)</dt><dd>@Html.DisplayFor(m => m.Correo)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver al listado", "Index", null, new { @class = "btn btn-default" })
+</p>

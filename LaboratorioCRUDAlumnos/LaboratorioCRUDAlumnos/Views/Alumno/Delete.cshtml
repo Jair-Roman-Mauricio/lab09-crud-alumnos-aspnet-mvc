@@ -1,0 +1,24 @@
+﻿@model LaboratorioCRUDAlumnos.Models.AlumnoModel
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h2>Eliminar alumno</h2>
+<h3 class="text-danger">¿Está seguro de que desea eliminar este alumno?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.Id)</dt><dd>@Html.DisplayFor(m => m.Id)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Nombres)</dt><dd>@Html.DisplayFor(m => m.Nombres)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Apellidos)</dt><dd>@Html.DisplayFor(m => m.Apellidos)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Edad)</dt><dd>@Html.DisplayFor(m => m.Edad)</dd>
+        <dt>@Html.DisplayNameFor(m => m.Correo)</dt><dd>@Html.DisplayFor(m => m.Correo)</dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
